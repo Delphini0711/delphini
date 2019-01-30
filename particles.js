@@ -1,12 +1,3 @@
-/* -----------------------------------------------
-/* Author : Vincent Garreau  - vincentgarreau.com
-/* MIT license: http://opensource.org/licenses/MIT
-/* Demo / Generator : vincentgarreau.com/particles.js
-/* GitHub : github.com/VincentGarreau/particles.js
-/* How to use? : Check the GitHub README
-/* v2.0.0
-/* ----------------------------------------------- */
-
 var pJS = function(tag_id, params){
 
   var canvas_el = document.querySelector('#'+tag_id+' > .particles-js-canvas-el');
@@ -1447,8 +1438,6 @@ window.cancelRequestAnimFrame = ( function() {
 } )();
 
 function hexToRgb(hex){
-  // By Tim Down - http://stackoverflow.com/a/5624139/3493650
-  // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
   var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
   hex = hex.replace(shorthandRegex, function(m, r, g, b) {
      return r + r + g + g + b + b;
@@ -1475,26 +1464,22 @@ function isInArray(value, array) {
 window.pJSDom = [];
 
 window.particlesJS = function(tag_id, params){
-
-  //console.log(params);
-
-  /* no string id? so it's object params, and set the id with default id */
   if(typeof(tag_id) != 'string'){
     params = tag_id;
     tag_id = 'particles-js';
   }
 
-  /* no id? set the id to default id */
+ 
   if(!tag_id){
     tag_id = 'particles-js';
   }
 
-  /* pJS elements */
+  
   var pJS_tag = document.getElementById(tag_id),
       pJS_canvas_class = 'particles-js-canvas-el',
       exist_canvas = pJS_tag.getElementsByClassName(pJS_canvas_class);
 
-  /* remove canvas if exists into the pJS target tag */
+  
   if(exist_canvas.length){
     while(exist_canvas.length > 0){
       pJS_tag.removeChild(exist_canvas[0]);
